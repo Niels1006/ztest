@@ -1,0 +1,18 @@
+name = "ztest"
+uuid = "53a03cd4-0ed0-4aed-8892-f956b57f4d8c"
+authors = ["Niels <hermsen.niels@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Plugin = "8c5b3f35-d937-42f1-aed2-532bd2edee11"
+Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
+PlutoBoard = "447e6095-edb7-4c27-ab1f-4a324c08f539"
+Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
+
+[compat]
+HTTP = "1.10.14"
+JSON = "0.21.4"
+Pluto = "0.20.3"
+Sockets = "1.11.0"
