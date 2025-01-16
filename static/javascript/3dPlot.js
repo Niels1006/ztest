@@ -1,8 +1,3 @@
-import { callJuliaFunction } from "/internal/static/javascript/interface.js";
-import { info } from "/internal/static/javascript/logger.js";
-
-
-
 // Bin data for the bar plot
 const bins = 20; // Number of bins for x and y axes
 const range = 3; // Range of values (-range to +range for x and y)
@@ -12,7 +7,7 @@ const binWidth = (2 * range) / bins;
 
 
 // Initialize the chart
-const chartDom = document.getElementById('chart');
+const chartDom = document.getElementById('gaussplot');
 const myChart = echarts.init(chartDom);
 
 // ECharts 3D bar plot configuration
@@ -138,16 +133,7 @@ const option = {
     ],
 };
 
-async function updatePlot() {
-    const meanX = Number(document.getElementById("meanX").value);
-    const meanY = Number(document.getElementById("meanY").value);
-    const sigmaX = Number(document.getElementById("sigmaX").value);
-    const sigmaY = Number(document.getElementById("sigmaY").value);
-    const rho = 0; // Correlation coefficient
-    const samples = Number(document.getElementById("samples").value);
-
-    const sampleData = await callJuliaFunction("gaussian2D", { args: [meanX, meanY, sigmaX, sigmaY, rho, samples] })
-
+export async function updatePlot(meanX, meanY, sigmaX, sigmaY, rho, sampleData) {
     const frequency = Array.from({ length: bins }, () => Array(bins).fill(0));
     for (const [x, y] of sampleData) {
         const binX = Math.round((x + range) / binWidth);
@@ -172,5 +158,4 @@ async function updatePlot() {
 
 }
 
-document.getElementById("gaussian2dUpdate").addEventListener("click", updatePlot);
 myChart.setOption(option);

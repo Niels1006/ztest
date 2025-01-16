@@ -7,7 +7,7 @@ function get_cube(num; ws)
     return num^3
 end
 
-function gaussian2D(meanX, meanY, sigmaX, sigmaY, rho, samples; ws)
+function gaussian2D(meanX, meanY, sigmaX, sigmaY, rho, samples)
     result = []
     for _ in 1:samples
         u1 = rand()
@@ -21,4 +21,28 @@ function gaussian2D(meanX, meanY, sigmaX, sigmaY, rho, samples; ws)
     end
 
     return result
+end
+
+function get_package_deps()
+    project_info = Pkg.dependencies()
+
+    dependencies = Dict(
+        "name" => "User Package",
+        "children" => []
+    )
+
+    for (pkg, info) in project_info
+        push!(
+            dependencies["children"],
+            Dict(
+                "name" => info.name,
+                "children" => map(name -> Dict("name" => name, "children" => [], "value" => 1), collect(keys(info.dependencies))),
+                "value" => length(collect(keys(info.dependencies)))
+            )
+        )
+    end
+
+    dependencies["value"] = length(dependencies["children"])
+
+    return JSON.json(dependencies)
 end

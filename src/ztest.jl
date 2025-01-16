@@ -5,6 +5,7 @@ using HTTP
 using HTTP.WebSockets
 using JSON
 using Sockets
+using Pkg
 
 using Plugin
 

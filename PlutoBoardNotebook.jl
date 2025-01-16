@@ -102,10 +102,10 @@ begin
 end
 
 # ╔═╡ 2eac3d05-ae01-40c8-abfa-d55349f043f3
-x=3
+x=1
 
 # ╔═╡ 2e287869-a591-45ba-ac12-28c24fd9059a
-x
+user_package.gaussian2D(0,0,1,1,0,5)
 
 # ╔═╡ Cell order:
 # ╠═caff9170-f1e7-11ee-3e0a-7bed8d1d0dd4
