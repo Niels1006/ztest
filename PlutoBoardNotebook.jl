@@ -105,7 +105,10 @@ end
 x=1
 
 # ╔═╡ 2e287869-a591-45ba-ac12-28c24fd9059a
-user_package.gaussian2D(0,0,1,1,0,5)
+x
+
+# ╔═╡ 7a62589e-ae64-4b71-8ec3-e5c1d0ed674e
+user_package.gaussian2D(0,0,1,1,1,5)
 
 # ╔═╡ Cell order:
 # ╠═caff9170-f1e7-11ee-3e0a-7bed8d1d0dd4
@@ -122,3 +125,4 @@ user_package.gaussian2D(0,0,1,1,0,5)
 # ╠═147ed5fe-0133-4eef-96f2-afafe9385f27
 # ╠═2eac3d05-ae01-40c8-abfa-d55349f043f3
 # ╠═2e287869-a591-45ba-ac12-28c24fd9059a
+# ╠═7a62589e-ae64-4b71-8ec3-e5c1d0ed674e
